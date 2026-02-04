@@ -1,4 +1,5 @@
 import { useState } from "react";
+import CalculateIMC from "~/components/CalculateIMC/CalculateIMC";
 
 export default function IMC() {
 
@@ -8,6 +9,7 @@ export default function IMC() {
     const [esNombreValido, setNombreValido] = useState(false);
     const [esAlturaValida, setAlturaValida] = useState(false);
     const [esPesoValido, setPesoValido] = useState(false);
+    const [imc, setImc] = useState<number | null>(null);
 
     function manejadorNombre(e: React.ChangeEvent<HTMLInputElement>) {
         setNombre(e.target.value);
@@ -25,8 +27,17 @@ export default function IMC() {
 
     const pesoNumerico = Number(valor);
     setPesoValido(pesoNumerico > 60 && pesoNumerico < 600);
-}
+    }
 
+    function calcularIMC() {
+    if (!esAlturaValida || !esPesoValido) return;
+
+    const alturaMetros = Number(altura);
+    const pesoKg = Number(peso) / 2; // lb → kg
+
+    const resultado = pesoKg / (alturaMetros ** 2);
+    setImc(Number(resultado.toFixed(2)));
+    }
 
     return (
         <section className="min-h-screen flex items-center justify-center from-slate-100 to-slate-300 px-6">
@@ -85,13 +96,14 @@ export default function IMC() {
                 </div>
 
                 <div className="flex justify-center pt-6">
-                    <button
-                        type="submit"
-                        className="bg-[oklch(52%_0.105_223.128)] text-white px-10 py-3 rounded-full font-semibold hover:brightness-110 transition active:scale-95"
-                    >
-                        Calcular IMC
-                    </button>
+                    <CalculateIMC onCalcular={calcularIMC} />
                 </div>
+
+                {imc !== null && (
+                    <p className="text-center text-xl font-mono italic text-[oklch(45%_0.085_224.283)]">
+                        {nombre}, tu IMC es: <strong>{imc}</strong>
+                    </p>
+                )}
 
             </div>
         </section>
