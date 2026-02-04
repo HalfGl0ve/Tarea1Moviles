@@ -37,7 +37,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
       <body>
         <Header />
         <div className="flex flex-1 overflow-hidden">
-          <main className="flex-1 overflow-y-auto p-6 flex justify-center items-start">
+          <main className="flex-1 overflow-y-auto p-6 flex justify-center items-center">
             <div className="w-full max-w-4xl">
               {children}
             </div>

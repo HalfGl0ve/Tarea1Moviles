@@ -14,14 +14,14 @@ export default function PeopleCard() {
             git: "DianaPaque",
             telefono: "3007222105",
             correo: "dianas.paquep@autonoma.edu.co",
-            foto: "https://randomuser.me/api/portraits/men/1.jpg"
+            foto: "https://i.pinimg.com/originals/b6/a8/8a/b6a88aeb70abb49783ff6b502c40e393.png"
         },
         {
             nombre: "Santiago Jimenez",
             git: "HalfGl0ve",
             telefono: "3217538646",
             correo: "santiago.jimenezc@autonoma.edu.co",
-            foto: "https://intrauam.autonoma.edu.co/intrauam2/uploads/fotos-usuarios/1056122562.png"
+            foto: "https://i.pinimg.com/736x/7f/f9/bc/7ff9bc1374fc7c29009e0b5922c194ee.jpg"
         },
     ];
 

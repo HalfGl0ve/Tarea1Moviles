@@ -100,9 +100,18 @@ export default function IMC() {
                 </div>
 
                 {imc !== null && (
-                    <p className="text-center text-xl font-mono italic text-[oklch(45%_0.085_224.283)]">
-                        {nombre}, tu IMC es: <strong>{imc}</strong>
-                    </p>
+                    <div className="flex-1 justify-center">
+                        <p className="text-center text-xl font-mono italic text-[oklch(45%_0.085_224.283)]">
+                            {nombre}, tu IMC es: <strong>{imc}</strong>
+                        </p>
+                        <p className="text-center text-xl font-mono italic text-[oklch(45%_0.085_224.283)]">
+                            <br />
+                            {imc < 18.5 && "Bajo peso"}
+                            {imc >= 18.5 && imc < 25 && "Peso normal"}
+                            {imc >= 25 && imc < 30 && "Sobrepeso"}
+                            {imc >= 30 && "Obesidad"}
+                        </p>
+                    </div>
                 )}
 
             </div>

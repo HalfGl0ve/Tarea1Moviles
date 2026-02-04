@@ -1,51 +1,46 @@
+import QuestionsMain from "~/components/QuestionsMain/QuestionsMain";
+
 export default function Home() {
 
     const questions = [
         {
             question: "¿Que es react?",
-            answer: "lorem ipsum dolor sit amet consectetur adipisicing elit."
+            answer: "Es una libreria de JavaScript que se basa en la arquitectura de componentes para crear páginas web, puede usarse tanto en html puro o con frameworks como Next.js"
         },
         {
             question: "¿Que es la arquitectura de componentes?",
-            answer: "lorem ipsum dolor sit amet consectetur adipisicing elit."
+            answer: "Es una arquitectura que se basa en la creación de piezas individuales y reutilizables en distintas partes del codigo"
         },
         {
             question: "¿Que es el proceso de transpilación",
-            answer: "lorem ipsum dolor sit amet consectetur adipisicing elit."
+            answer: "Es el proceso de convertir un lenguaje de programacion a otro, en el caso de react es convertir JSX a JavaScript"
         },
         {
             question: "¿Que es JSX?",
-            answer: "lorem ipsum dolor sit amet consectetur adipisicing elit."
+            answer: "Es una extension de JavaScript que permite escribir codigo HTML en JavaScript"
         },
         {
             question: "¿Que son los hooks?",
-            answer: "lorem ipsum dolor sit amet consectetur adipisicing elit."
+            answer: "Son funciones que permiten usar el estado y otras caracteristicas de React en componentes funcionales"
         },
         {
             question: "¿Que es VITE?",
-            answer: "lorem ipsum dolor sit amet consectetur adipisicing elit."
+            answer: "Es una herramienta para hacer el compilado de aplicaciones web mas rapido y eficiente"
         },
         {
             question: "¿Que es el state?",
-            answer: "lorem ipsum dolor sit amet consectetur adipisicing elit."
+            answer: "Es un objeto que permite almacenar datos que pueden cambiar con el tiempo"
         },
         {
             question: "¿Que son los props?",
-            answer: "lorem ipsum dolor sit amet consectetur adipisicing elit."
+            answer: "Son propiedades que se pasan de un componente padre a un componente hijo como por ejemplo estas preguntas"
         }
     ]
 
 
     return (
         <main>
-            {questions.map((question) => {
-                return (
-                    <div key={question.question}>
-                        <h2 className="text-left text-2xl font-mono italic text-[oklch(45%_0.085_224.283)]">{question.question}</h2>
-                        <p className="mb-5 font-mono">{question.answer}</p>
-                    </div>
-                );
-            })}
+            <QuestionsMain questions={questions} />
         </main>
     );
 }
